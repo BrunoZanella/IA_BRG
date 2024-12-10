@@ -7,9 +7,12 @@ SECRET_KEY = '12g214fgtb6yhhj mynumrniu678t*&l0ep4-mep$mm-6f!9&8+=3c0rjh4mz5hl14
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.15.96','10.0.6.169']
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
+    'django.contrib.humanize',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -17,10 +20,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chat',
+    'localflavor',
+
 ]
+
+X_FRAME_OPTIONS='SAMEORIGIN'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -28,6 +36,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+#ALLOWED_HOSTS = ['192.168.15.96','10.0.6.169']
+
+ALLOWED_HOSTS = ["*"]
+STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#CSRF_TRUSTED_ORIGINS= ["https://loteria.up.railway.app"]
 
 ROOT_URLCONF = 'chatbot_project.urls'
 
