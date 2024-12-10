@@ -41,7 +41,7 @@ MIDDLEWARE = [
 
 ALLOWED_HOSTS = ["*"]
 STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-#CSRF_TRUSTED_ORIGINS= ["https://loteria.up.railway.app"]
+CSRF_TRUSTED_ORIGINS= ["https://brg.up.railway.app"]
 
 ROOT_URLCONF = 'chatbot_project.urls'
 
